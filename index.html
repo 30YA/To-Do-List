@@ -5,17 +5,90 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>30YA</title>
   </head>
-  <body>
-    <div class="topPic">
-      
+  <body dir="rtl">
+    <div class="main">
+      <div class="topPic"></div>
+    <main>
+      <header>
+        <button><i class="fas fa-moon"></i></button>
+        <h1>T O D O</h1>
+      </header>
+      <form>
+        <div class="add-item">
+          <input type="text" class="todo-input" maxlength="40" placeholder="یک کار ایجاد کنید ....">
+          <button><i class="fas fa-plus"></i></button>
+        </div>
+        <div class="select">
+          <select class="filter-todos" name="todos">
+            <option value="">همه</option>
+            <option value="">تکمیل شده</option>
+            <option value="">تکمیل نشده</option>
+          </select>
+        </div>
+      </form>
+      <div class="todo-container">
+        <ul>
+          <li>
+            <label>
+              <input type="checkbox">
+              <div class="custom-Checkbox"></div>
+              <h3 style="user-select: none;">خرید کتاب</h3>
+            </label>
+            <div class="btns">
+              <button><i class="fas fa-edit"></i></button>
+              <button><i class="fas fa-times"></i></button>
+            </div>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox">
+              <div class="custom-Checkbox"></div>
+              <h3 style="user-select: none;">خرید کتاب</h3>
+            </label>
+            <div class="btns">
+              <button><i class="fas fa-edit"></i></button>
+              <button><i class="fas fa-times"></i></button>
+            </div>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox">
+              <div class="custom-Checkbox"></div>
+              <h3 style="user-select: none;">javascript</h3>
+            </label>
+            <div class="btns">
+              <button><i class="fas fa-edit"></i></button>
+              <button><i class="fas fa-times"></i></button>
+            </div>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox">
+              <div class="custom-Checkbox"></div>
+              <h3 style="user-select: none;">خرید کتاب</h3>
+            </label>
+            <div class="btns">
+              <button><i class="fas fa-edit"></i></button>
+              <button><i class="fas fa-times"></i></button>
+            </div>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox">
+              <div class="custom-Checkbox"></div>
+              <h3 style="user-select: none;">خرید کتاب</h3>
+            </label>
+            <div class="btns">
+              <button><i class="fas fa-edit"></i></button>
+              <button><i class="fas fa-times"></i></button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </main>
     </div>
     <script src="assets/js/script.js"></script>
   </body>
