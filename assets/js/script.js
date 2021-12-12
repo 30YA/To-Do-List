@@ -39,6 +39,38 @@ function addItem(e) {
         },5000);
     }
 }
+// this function for select section : ------------------------------------------
+// const label = document.querySelector(".todo-container ul li label");
+// console.dir();
+const select = document.querySelector(".filter-todos");
+const ultag = document.querySelector(".todo-container ul");
+select.addEventListener('change',selectOtion);
+
+// console.dir(select);
+function selectOtion(e) {
+    const liTags = [...ultag.children];
+    liTags.forEach(element => {
+        switch (e.target.value) {
+            case "all":
+                element.style.display = "flex";
+                break;
+            case "completed":
+                if (element.children[0].children[3].classList.contains("complete")) {
+                    element.style.display = "flex";
+                }else{
+                    element.style.display = "none";
+                }
+                break;
+            case "uncompleted":
+                if (!(element.children[0].children[3].classList.contains("complete"))) {
+                    element.style.display = "flex";
+                }else{
+                    element.style.display = "none";
+                }
+                break;
+        }
+    });
+}
 // this function for edite & Delete & checkbox Buttons : ------------------------------------------
 todoContainer.addEventListener('click',deleteLi);
 todoContainer.addEventListener('click',checkItem);
