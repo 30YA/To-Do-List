@@ -1,0 +1,14 @@
+:root {
+    --primaryColor: rgb(153, 0, 255);
+    --secondaryColor: rgb(0, 204, 255);
+    --mainBlack: rgb(90, 90, 90);
+    --mainGray: gray;
+    --mainGreen: green;
+    --mainYellow: yellow;
+    --mainRed: rgb(255, 0, 0);
+    --mainTransition: all .3s linear;
+    --mainGradiant: linear-gradient(to bottom right, rgba(174, 0, 255,.6), rgba(0, 204, 255,.6));
+    --mainBlack: #fff;
+    --mainWhite: rgb(59, 59, 59);
+    --bodyColor: rgb(27,27,27);
+}

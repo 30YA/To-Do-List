@@ -9,15 +9,13 @@
 :root {
     --primaryColor: rgb(153, 0, 255);
     --secondaryColor: rgb(0, 204, 255);
-    --mainWhite: #fff;
     --mainBlack: rgb(90, 90, 90);
-    --mainBlack2: rgb(27,27,27);
-    --mainBlack3: rgb(59, 59, 59);
+    --bodyColor: #fff;
+    --mainWhite: #fff;
     --mainGray: gray;
     --mainGreen: green;
     --mainYellow: yellow;
     --mainRed: rgb(255, 0, 0);
-    --bodyColor: rgb(255, 255, 255);
     --mainTransition: all .3s linear;
     --mainGradiant: linear-gradient(to bottom right, rgba(174, 0, 255,.6), rgba(0, 204, 255,.6));
 }
@@ -111,12 +109,12 @@ main header{
     margin: 10px 0 40px 0;
 }
 main header h1{
-    color: var(--mainWhite);
+    color: #fff;
     font-size: 40px;
     user-select: none;
 }
 main header .darkMode{
-    color: var(--mainWhite);
+    color: #fff;
     font-size: 25px;
     cursor: pointer;
     transition: all .4s;
@@ -164,6 +162,8 @@ main form .add-item input{
     border-radius: 7px;
     font-size: 18px;
     padding: 10px;
+    background-color: var(--mainWhite);
+    color: var(--mainBlack);
 }
 main form .add-item input:focus{
     outline: rgba(54, 54, 54, 0.4) solid 4px;
@@ -179,7 +179,7 @@ main form .add-item button{
     border-radius: 7px;
     cursor: pointer;
     background-image: var(--mainGradiant);
-    color: var(--mainWhite);
+    color: #fff;
     font-size: 17px;
 }
 main form .select select{
@@ -191,6 +191,8 @@ main form .select select{
     border-radius: 7px;
     padding: 10px;
     font-size: 18px;
+    background-color: var(--mainWhite);
+    color: var(--mainBlack);
 }
 main form .select select:focus{
     outline: rgba(54, 54, 54, 0.4) solid 4px;
@@ -218,7 +220,7 @@ main form .select select:focus{
 .todo-container{
     width: 100%;
     border-radius: 7px;
-    background-color: var(--bodyColor);
+    background-color: var(--mainWhite);
     box-shadow: 1px 5px 50px -1px rgba(95, 95, 95, 0.4);
     z-index: 2;
 }
@@ -277,7 +279,7 @@ main form .select select:focus{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--mainWhite);
+    color: #fff;
     background: var(--mainGradiant);
     border-radius: 50%;
     transition: opacity .2s;
