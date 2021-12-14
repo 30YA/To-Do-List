@@ -21,6 +21,7 @@ function addItem(e) {
            <button><i class="fas fa-times"></i></button>
            </div>`;
            todoContainer.append(li_tag);
+           saveLocalTodos(inputValue.value)
            inputValue.value = "";
            document.querySelector(".modal").style.transform = "translate(400px,0)";
            
@@ -79,7 +80,9 @@ function deleteLi(e) {
     if (classArray[1] == "fa-edit") {
         console.log(e.target.parentElement.parentElement.parentElement);
     }else if (classArray[1] == "fa-times"){
-        e.target.parentElement.parentElement.parentElement.remove();
+        const parentElement = e.target.parentElement.parentElement.parentElement;
+        parentElement.remove();
+        removeLocalStorage(parentElement);
     }
 }
 function checkItem(e) {
@@ -89,10 +92,46 @@ function checkItem(e) {
         h3.classList.toggle("complete");
     }
 }
-// this function for dark mode : -----------------------------------------------------------------------------
+// set Local Storage : ----------------------------------------------------
+function saveLocalTodos(todo) {
+    const savedTodos = localStorage.getItem('todos') ? 
+    JSON.parse(localStorage.getItem('todos')) :
+    [];
+    savedTodos.push(todo);
+    localStorage.setItem('todos',JSON.stringify(savedTodos));
+};
+function removeLocalStorage(parentElement){
+    const savedTodos = JSON.parse(localStorage.getItem('todos'));
+    const textContent = parentElement.children[0].children[3].textContent;
+    const result = savedTodos.filter(value => {
+        return value != textContent;
+    })
+    console.log(result);
+    localStorage.setItem('todos',JSON.stringify(result));
+};
+window.addEventListener('load',loadLocal);
+function loadLocal() {
+    const savedTodos = localStorage.getItem('todos') ? 
+    JSON.parse(localStorage.getItem('todos')) :
+    [];
+    savedTodos.forEach( todo => {
+        let li_tag = document.createElement("li");
+            li_tag.innerHTML = `<label>
+               <div class="clickable"></div>
+               <input type="checkbox">
+               <div class="custom-Checkbox"></div>
+               <h3 style="user-select: none;">${todo}</h3>
+               </label>
+               <div class="btns">
+               <button><i class="fas fa-edit"></i></button>
+               <button><i class="fas fa-times"></i></button>
+               </div>`;
+            todoContainer.append(li_tag);
+    })
+}
+// this function for dark mode : --------------------------------------------------
 const darkModeBtn = document.querySelector(".darkMode");
 const head = document.getElementById("darkMode");
-console.log(head);
 darkModeBtn.addEventListener('click',darkMode);
 let darkMode_Counter = 0;
 function darkMode() {
